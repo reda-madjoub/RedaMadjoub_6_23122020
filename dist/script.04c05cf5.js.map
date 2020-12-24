@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/js/test.js","src/js/script.js"],"names":["console","log"],"mappings":"AAAAA,OAAO,CAACC,GAAR,CAAY,WAAZ;;ACAA;;AACAD,OAAO,CAACC,GAAR,CAAY,OAAZ","file":"script.04c05cf5.js","sourceRoot":"..","sourcesContent":["console.log('test file')","import './test.js'\r\nconsole.log('hello')"]}
