@@ -1,5 +1,4 @@
 .sass-cache
-*.scss
+_test.scss
 style.css.map
 node_modules
-dist
