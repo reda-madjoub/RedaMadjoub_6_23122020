@@ -1,1 +1,0 @@
-{"version":3,"sources":["src/js/test.js","src/js/script.js"],"names":["console","log"],"mappings":";AAAAA,QAAQC,IAAI;;ACCZ,aADA,QAAA,aACAD,QAAQC,IAAI","file":"script.4599cdf1.js","sourceRoot":"..","sourcesContent":["console.log('test file')","import './test.js'\r\nconsole.log('hello')\r\n"]}

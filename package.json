@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch src/styles/sass:src/styles/css --style compressed",
@@ -21,11 +20,20 @@
   },
   "homepage": "https://github.com/reda-madjoub/RedaMadjoub_6_23122020#readme",
   "dependencies": {
-    "cloudinary-core": "^2.11.3",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "babel": "^6.23.0",
+    "core-js": "^2.6.5",
     "node-sass": "^5.0.0"
   },
   "description": "",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "parcel-bundler": "^1.12.4"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env"]
   }
 }

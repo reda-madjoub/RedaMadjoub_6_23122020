@@ -1,1 +1,0 @@
-{"version":3,"sources":["src\\styles\\sass\\style.scss"],"names":[],"mappings":"AAAA,EACI,cAAe,CAEnB,GACI,WAAY","file":"style.38b9f4a5.css","sourceRoot":"..","sourcesContent":["*{\r\n    background: red;\r\n}\r\nh1 {\r\n    color: green;\r\n}"]}
