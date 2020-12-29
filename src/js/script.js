@@ -1,10 +1,12 @@
-import 'regenerator-runtime/runtime' // important babel 
+// import 'regenerator-runtime/runtime' // important babel 
 import './test.js'
 
 
 // DOM ELEMENTS
 const cards = document.getElementsByClassName("cards")
 const tags = document.getElementsByClassName("tags")
+const tagFilter = document.querySelectorAll("nav a")
+
 // RESQUEST
 const requestOptions = {
     method: 'GET',
@@ -59,6 +61,23 @@ const fetchPhotographers = async(data) => {
             }
             affichageTags = ''
         }
-    }   
+    }
+    
+    // FILTRER LES PHOTOGRAPHES AVEC TAG DANS NAVIGATION
+    const focusTagNav = () => {
+        
+    }
+    tagFilter.forEach(item => {
+        item.addEventListener('click', data => {
+        console.log(document.querySelectorAll(".tags .tag-link .tag"));
+    })
+})
 
 requete()
+
+/*
+clicker sur un tag
+chercher les photographe avec le meme tags
+mettre les autres display:none pour les cacher
+si on reclick sur le meme tag il remet display block
+*/

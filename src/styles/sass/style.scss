@@ -51,7 +51,11 @@ header {
             -ms-transition: all 0.2s;
             -o-transition: all 0.2s;
             &:hover{
-                background-color: #901C1C;
+                background-color: $primary-bg;
+                color: #fff;
+            }
+            &:focus {
+                background-color: $primary-bg;
                 color: #fff;
             }
         }   
