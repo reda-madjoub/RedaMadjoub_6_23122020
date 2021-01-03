@@ -1,5 +1,6 @@
 // import 'regenerator-runtime/runtime' // important babel 
 import { data } from './data.js'
+import './scrollButton.js'
 
 
 // DOM ELEMENTS
