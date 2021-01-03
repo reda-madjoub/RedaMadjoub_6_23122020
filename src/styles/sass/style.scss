@@ -54,11 +54,11 @@ header {
                 background-color: $primary-bg;
                 color: #fff;
             }
-            &:focus {
-                background-color: $primary-bg;
-                color: #fff;
-            }
         }   
+        .selected {
+            background-color: $primary-bg;
+            color: #fff;
+        }
     }
 }
 @media (max-width: 1050px) {

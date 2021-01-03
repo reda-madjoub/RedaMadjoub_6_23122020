@@ -1,13 +1,13 @@
 // import 'regenerator-runtime/runtime' // important babel 
 import { data } from './data.js'
 
-// DOM ELEMENTS
-const cards = document.getElementsByClassName("cards")
-const card = document.getElementsByClassName("card")
-const tags = document.getElementsByClassName("tags")
-const tagFilter = document.querySelectorAll("nav a")
 
-console.log(cards);
+// DOM ELEMENTS
+const tagFilter = document.querySelectorAll("nav a")
+const card = document.getElementsByClassName("card")
+const cards = document.getElementsByClassName("cards")
+const tags = document.getElementsByClassName("tags")
+
 
 // AFFICHER LES PHOTOGRAPHES
 const fetchPhotographers = (data) => {
@@ -18,7 +18,7 @@ const resultat = [...data.photographers].map(item => {
 for(let i = 0; i < resultat.length; i++) {
     result += `
     <div class="card" id="${resultat[i].id}">
-        <a href="#">
+        <a href="./src/pages/${resultat[i].name.replace(/\s+/g, '').toLowerCase()}.html">
             <img src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/${resultat[i].portrait}" alt="${resultat[i].name}">
             <h2>${resultat[i].name}</h2>
         </a>
@@ -37,7 +37,6 @@ for(let i = 0; i < resultat.length; i++) {
 const fetchTags = (data) => {
     let affichageTags =''
     const res = [...data.photographers].map(item => {
-        console.log(item.tags);
         return item.tags
     })
     for(let i = 0; i < res.length; i++) {
@@ -58,29 +57,70 @@ const showAllPhoto = (data) => {
     console.log(Object.values(data)[1].filter(elem => elem.photographerId === 82));
 }
 
+
 // RECHERCHE PAR TAG
+const tab = []
 const filterByTags = (tag) => {
-    let res = data.photographers.map(el => el.tags.includes(tag) ? el.id : -1)
-    console.log(data.photographers[0].tags)
-    console.log(tag)
-    for (let i = 0; i < res.length; i++) {
-        if(res[i] !== -1) {
+// CHECK WHICH TAG ARE SELECTED AND PUTTING THEM INTO "tab" ARRAY
+    if(tab.length < 1) {
+        tab.push(tag)
+    }else {
+        if(tab.includes(tag)) {
+            for (let i = 0; i < tab.length; i++) {
+                if(tab[i] === tag) {
+                    tab.splice(i,1)
+                }
+            }
+        }else {
+            tab.push(tag)
+        }
+    }
+
+    // GET PHOTOGRPAHERS ID WHICH HAVE THE SAME TAGS AS SELECTED TAGS IN "tab" ARRAY
+    let res = []
+    data.photographers.map(el => {
+        el.tags.filter(elem => {
+            if(tab.includes(elem) === true) {
+                if(!(res.includes(el.id))){
+                    return res.push(el.id)
+                }
+            }else {
+                return -1
+            }
+        })
+    }) 
+
+    // DISPLAY PHOTOGRAPHERS WHICH ID IS IN "res" ARRAY
+    if(res.length !== 0) {
+        for (let i = 0; i < card.length; i++) {
+            if(res.includes(parseInt(card[i].getAttribute('id')))) {
+                card[i].style.display = "flex"
+            }else {
+                card[i].style.display = "none"
+            }
+        }
+    }else {
+        for (let i = 0; i < card.length; i++) {
             card[i].style.display = "flex"
-        } else {
-            card[i].style.display = "none"
         }
     }
 }
 
 // FILTRAGE PHOTO LORS DU CLIC SUR LE TAG
 tagFilter.forEach(item => item.addEventListener("click",(e) => {
+    if(item.classList.contains("selected")) {
+        item.classList.remove("selected")
+    }else {
+        item.classList.add("selected")
+    }
     filterByTags(e.target.innerText.substring(1).toLowerCase())
 }))
+
+
 
 fetchPhotographers(data)
 fetchTags(data)
 // showAllPhoto(data)
-// filterByTags("fashion")
 
 
 
