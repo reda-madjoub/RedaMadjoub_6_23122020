@@ -12,6 +12,9 @@ $secondary-dark-bg: #FAFAFA;
     box-sizing: border-box;
     font-family: 'DM Sans', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 // HEADER
 header {
     position: relative;
@@ -78,7 +81,12 @@ header {
         font-size: 18px;
         font-family: DM Sans;
         text-decoration: none;
-    }
+        transition: all 0.4s linear;
+        -webkit-transition: all 0.4s linear;
+        -moz-transition: all 0.4s linear;
+        -ms-transition: all 0.4s linear;
+        -o-transition: all 0.4s linear;
+}
 }
 @media (max-width: 1050px) {
     header {

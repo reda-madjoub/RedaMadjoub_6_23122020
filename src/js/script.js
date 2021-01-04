@@ -105,6 +105,8 @@ const filterByTags = (tag) => {
             card[i].style.display = "flex"
         }
     }
+    console.log(tag);
+    console.log(tab);
 }
 
 // FILTRAGE PHOTO LORS DU CLIC SUR LE TAG
@@ -117,11 +119,57 @@ tagFilter.forEach(item => item.addEventListener("click",(e) => {
     filterByTags(e.target.innerText.substring(1).toLowerCase())
 }))
 
+/* debut test  ==> event delegation*/
+cards[0].addEventListener("click",(e) => {
+    // console.log(e.target.classList.value === 'tag-link' ||e.target.classList.value === 'tag');
+    // console.log(e.target);
+    // console.log(e.target.parentNode);
+
+    
+    //****** */
+    // click sur tag sous la photo d'un photographe
+    if(e.target.classList.value === 'tag') { 
+        const tagPhotographe = e.target.innerText.substring(1).toLowerCase()
+        
+        // Tag sous la photo d'un photographe deja selectionné ? (verification dans le tab)
+        if(tab.includes(tagPhotographe) ) {
+            tagFilter.forEach(item => {
+                if(item.innerText.substring(1).toLowerCase() === tagPhotographe) {
+                    if(item.classList.contains("selected")) {
+                        item.classList.remove("selected")
+                    }else {
+                        item.classList.add("selected")
+                    }
+                }
+            })
+        }else {
+            tagFilter.forEach(item => {
+                if(item.innerText.substring(1).toLowerCase() === tagPhotographe) {
+                    if(item.classList.contains("selected")) {
+                        item.classList.remove("selected")
+                    }else {
+                        item.classList.add("selected")
+                    }
+                }
+            })
+        }
+        filterByTags(tagPhotographe)
+    }
+})
+
+
+
+
+
+
+
+/* fin test */
+
+
 
 
 fetchPhotographers(data)
 fetchTags(data)
-// showAllPhoto(data)
 
 
 
