@@ -1,1 +1,104 @@
-errlk,f
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi Keel</title>
+    <link rel="stylesheet" href="../styles/css/photographe.css">
+</head>
+<body>
+    <header role="banner">
+        <a href="../../index.html"><img src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png" alt="logo de fisheye"></a>
+    </header>
+    <main>
+        <header>
+            <div class="info-header">
+                    <h1>Mimi Keel</h1>
+                    <p>London, Uk</p>
+                    <p><em>Voir le beau dans le quotidien</em></p>
+                    <nav aria-label="photographer categories" role="navigation">
+                        <a aria-label="tag portrait" class="tag-link" href="#">
+                            <span>#Portrait</span>
+                        </a>
+                        <a aria-label="tag travel" class="tag-link" href="#">
+                          <span>#Travel</span>
+                        </a>
+                        <a aria-label="tag animals" class="tag-link" href="#">
+                          <span>#Animals</span>
+                        </a>
+                        <a aria-label="tag events" class="tag-link" href="#">
+                          <span>#Events</span>
+                        </a>
+                    </nav>
+                <button>Contacter-moi</a>
+            </div>
+            <div class="photo-header">
+                <img src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/MimiKeel" alt="Mimi Keel">
+            </div>
+        </header>
+        <div class="trie">
+            <p>>Trier par </p>
+            <ul>
+            <li>Popularité</li>
+            <li>Date</li>
+            <li>Titre</li>
+        </ul>
+        </div>
+        <section>
+            <!-- <h2>Gallerie</h2> -->
+            <div class="gallerie">
+                <div class="thumb-img">
+                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
+                </div>
+                <div class="thumb-img">
+                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
+                </div>
+                <div class="thumb-img">
+                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
+                </div>
+                <div class="thumb-img">
+                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
+                </div>
+                <div class="thumb-img">
+                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
+                </div>
+                <div class="thumb-img">
+                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
+                </div>
+            </div>
+        </section>
+    </main>
+    <aside id="formulaire" role="dialog" aria-hidden="true" aria-modal="false" aria-labelledby="titleModal">
+        <div id="container">
+            <div id="close" aria-label="Fermer le formulaire de contacte" >
+                <div id="close-container" tabindex="0">
+                    <div id="cross-1"></div>
+                    <div id="cross-2"></div>
+                </div>
+            </div>
+            <h1 id="titleModal">Contactez-moi <br/>Mimi Keel</h1>
+            <form autocomplete="off">
+                <div class="field">
+                    <label for="first">Prénom</label>
+                    <input type="text" name="first" id="first" placeholder="Prénom">
+                </div>
+                <div class="field">
+                    <label for="last">Nom</label>
+                    <input type="text" name="last" id="last" placeholder="Nom">
+                </div>
+                <div class="field">
+                    <label for="mail">Email</label>
+                    <input type="email" name="mail" id="mail" placeholder="Adresse mail">
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea type="text" name="message" id="message" placeholder="Ecrivez nous ..."></textarea>
+                </div>
+            </form>
+            <button type="submit" id="validation">Envoyer</button>
+        </div>
+    </aside>
+    <script src="../js/formulaire.js"></script>
+    <script type="module" src="../js/photographes.js"></script>
+</body>
+</html>
