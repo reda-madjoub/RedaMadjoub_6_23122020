@@ -47,7 +47,6 @@ buttonLaunchForm.addEventListener("click", e => {
 })
 
 window.addEventListener("keydown", (e) => {
-
     // TRAP TAB AND SHIFT + TAB INSIDE MODAL
     if(e.target === closeContainer && e.key === "Tab") {
         if(e.target === closeContainer &&  e.shiftKey){

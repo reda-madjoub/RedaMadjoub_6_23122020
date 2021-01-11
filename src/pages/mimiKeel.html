@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mimi Keel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="../styles/css/photographe.css">
 </head>
 <body>
@@ -36,14 +37,49 @@
                 <img src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/MimiKeel" alt="Mimi Keel">
             </div>
         </header>
-        <div class="trie">
-            <p>>Trier par </p>
-            <ul>
-            <li>Popularité</li>
-            <li>Date</li>
-            <li>Titre</li>
-        </ul>
-        </div>
+        <!-- <div class="menu-dropdown">
+            <div class="container">
+                <a class="dropdown-item" href="#">Populaire</a>
+                <button class="menu-dropdown" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                <hr>
+                <a class="dropdown-item" href="#">Date</a>
+                <hr>
+                <a class="dropdown-item" href="#">Titre</a>
+            </div>
+        </div> -->
+        <div class="menu_button">
+            <div class="container">
+                <a href="#">Popularité</a>
+                <button id="menubutton"
+                aria-haspopup="true"
+                aria-controls="menu-dropdown">
+                <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            <ul id="menu-dropdown"
+                role="menu"
+                aria-labelledby="menubutton"
+                aria-expanded="false">
+                <hr>
+              <li role="none">
+                <a role="menuitem" href="#">
+                  Date
+                </a>
+              </li>
+              <hr>
+              <li role="none">
+                <a role="menuitem" href="#">
+                 Titre
+                </a>
+              </li>
+            </ul>
+          </div>
+
+
         <section>
             <!-- <h2>Gallerie</h2> -->
             <div class="gallerie">
@@ -99,6 +135,7 @@
         </div>
     </aside>
     <script src="../js/formulaire.js"></script>
+    <script src="../js/dropdownMenu.js"></script>
     <script type="module" src="../js/photographes.js"></script>
 </body>
 </html>
