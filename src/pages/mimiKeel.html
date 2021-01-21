@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mimi Keel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styles/sass/photographe.css">
     <link rel="stylesheet" href="../styles/css/photographe.css">
 </head>
 <body>
@@ -13,44 +14,11 @@
     </header>
     <main>
         <header>
-            <div class="info-header">
-                    <h1>Mimi Keel</h1>
-                    <p>London, Uk</p>
-                    <p><em>Voir le beau dans le quotidien</em></p>
-                    <nav aria-label="photographer categories" role="navigation">
-                        <a aria-label="tag portrait" class="tag-link" href="#">
-                            <span>#Portrait</span>
-                        </a>
-                        <a aria-label="tag travel" class="tag-link" href="#">
-                          <span>#Travel</span>
-                        </a>
-                        <a aria-label="tag animals" class="tag-link" href="#">
-                          <span>#Animals</span>
-                        </a>
-                        <a aria-label="tag events" class="tag-link" href="#">
-                          <span>#Events</span>
-                        </a>
-                    </nav>
-                <button>Contacter-moi</a>
-            </div>
-            <div class="photo-header">
-                <img src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/MimiKeel" alt="Mimi Keel">
+            <div id="info-header"></div>
+            <div id="photo-header">
+               
             </div>
         </header>
-        <!-- <div class="menu-dropdown">
-            <div class="container">
-                <a class="dropdown-item" href="#">Populaire</a>
-                <button class="menu-dropdown" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-chevron-up"></i>
-                </button>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                <hr>
-                <a class="dropdown-item" href="#">Date</a>
-                <hr>
-                <a class="dropdown-item" href="#">Titre</a>
-            </div>
-        </div> -->
         <div class="menu_button">
             <div class="container">
                 <a href="#">Popularité</a>
@@ -79,31 +47,22 @@
             </ul>
           </div>
 
-
-        <section>
-            <!-- <h2>Gallerie</h2> -->
-            <div class="gallerie">
-                <div class="thumb-img">
-                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
-                </div>
-                <div class="thumb-img">
-                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
-                </div>
-                <div class="thumb-img">
-                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
-                </div>
-                <div class="thumb-img">
-                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
-                </div>
-                <div class="thumb-img">
-                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
-                </div>
-                <div class="thumb-img">
-                    <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
-                </div>
-            </div>
+        <section id="gallerie">
+           
         </section>
+
+          <!-- LIGHTBOX -->
+        <!-- <div class="lightbox">
+            <button class="lightbox__close">fermer</button>
+            <button class="lightbox__next">suivant</button>
+            <button class="lightbox__previous">précédent</button>
+            <div class="lightbox__container">
+                <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
+            </div>
+        </div> -->
     </main>
+
+    <!-- MODAL FORMULAIRE -->
     <aside id="formulaire" role="dialog" aria-hidden="true" aria-modal="false" aria-labelledby="titleModal">
         <div id="container">
             <div id="close" aria-label="Fermer le formulaire de contacte" >
@@ -134,8 +93,14 @@
             <button type="submit" id="validation">Envoyer</button>
         </div>
     </aside>
-    <script src="../js/formulaire.js"></script>
-    <script src="../js/dropdownMenu.js"></script>
-    <script type="module" src="../js/photographes.js"></script>
+
+
+    <!-- SCRIPT JS -->
+    <!-- DEFER sert à lancé le sript lorsque la page est chargé -->
+    <script type="module" src="../js/photographes/header.js"></script>
+    <script type="module" src="../js/photographes/lightbox.js"></script>
+    <script type="module" src="../js/photographes/gallerie.js"></script>
+    <script src="../js/photographes/dropdownMenu.js"></script>
+    <script src="../js/photographes/formulaire.js"></script>
 </body>
 </html>
