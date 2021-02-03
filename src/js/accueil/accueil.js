@@ -17,7 +17,7 @@ const resultat = [...data.photographers].map(item => {
 for(let i = 0; i < resultat.length; i++) {
     result += `
     <div class="card" id="${resultat[i].id}">
-        <a href="./src/pages/${resultat[i].name.replace(/\s+/g, '').toLowerCase()}.html">
+        <a href="reda-madjoub.github.io/RedaMadjoub_6_23122020/src/pages/${resultat[i].name.replace(/\s+/g, '').toLowerCase()}.html">
             <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_550,h_550/P6-img/${resultat[i].portrait}" alt="${resultat[i].name}">
             <h2>${resultat[i].name}</h2>
         </a>

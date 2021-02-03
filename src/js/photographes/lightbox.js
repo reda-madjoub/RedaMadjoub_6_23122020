@@ -53,7 +53,6 @@ window.addEventListener("load", (e) => {
                                                                                     <source src="${el[1].currentSrc}" type="video/mp4">    
                                                                                 </video>` 
                 container.innerHTML = html
-                console.log(lightbox.indexOf(container));
             })
         })
     })
