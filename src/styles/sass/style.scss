@@ -96,7 +96,7 @@ header {
             width: 150px;
         }
         nav {
-            width: 340px;
+            width: 100%;
             margin: 0 auto;
             align-self: center;
             
@@ -140,7 +140,7 @@ main {
                 padding: 20px 0px;
                 // background-color: #1a8375;
                 line-height: 20px;
-                width: 500px;
+                width: 350px;
                 display: flex;
                 flex-flow: column nowrap;
                 align-items: center;
@@ -153,8 +153,8 @@ main {
                         background: #C4C4C4;
                         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
                         border-radius: 50%;
-                        width: 300px;
-                        height: 300px;
+                        width: 200px;
+                        height: 200px;
                         -webkit-border-radius: 50%;
                         -moz-border-radius: 50%;
                         -ms-border-radius: 50%;
@@ -228,6 +228,23 @@ main {
             right: 10px;
         }
     }
+}
+@media (max-width: 310px) {
+main {
+    section {
+        .cards{
+            .card {
+                width: 80%;
+                a {
+                    img {
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
 }
 @media (max-width: 310px) {
     main {

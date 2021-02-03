@@ -1,0 +1,899 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  width: 90%;
+  margin: 5px;
+  padding-top: 40px;
+  padding-left: 30px;
+}
+
+header a img {
+  width: 200px;
+}
+
+main {
+  z-index: 0;
+  overflow: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+main header {
+  padding: 5px;
+  background-color: #FAFAFA;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  width: 95%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main header #info-header {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 30px;
+}
+
+main header #info-header h1 {
+  color: #D3573C;
+  font-size: 44px;
+  line-height: 60px;
+  width: 67%;
+}
+
+main header #info-header p {
+  font-size: 24px;
+  color: #901C1C;
+  line-height: 30px;
+}
+
+main header #info-header em {
+  color: #525252;
+  margin: 10px 0px;
+}
+
+main header #info-header nav {
+  margin-top: 20px;
+}
+
+main header #info-header nav a {
+  text-decoration: none;
+  color: #901C1C;
+  border: 0.5px solid #525252;
+  margin: 0 5px;
+  text-align: center;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+main header #info-header nav a:hover {
+  color: #FAFAFA;
+  background-color: #901C1C;
+  border-color: #901C1C;
+}
+
+main header #info-header button {
+  z-index: 5;
+  position: relative;
+  height: 50px;
+  cursor: pointer;
+  left: 70%;
+  bottom: 160px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #901C1C;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+main header #photo-header {
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main header #photo-header img {
+  background: #C4C4C4;
+  -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0);
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0);
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+main #container_dropdownMenu {
+  margin-top: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+main #container_dropdownMenu p {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0px 20px;
+}
+
+main #container_dropdownMenu .menu_button {
+  font-weight: 700;
+  overflow: hidden;
+  background-color: #901C1C;
+  width: 150px;
+  height: 50px;
+  margin: 15px;
+  padding: 5px 15px 15px 5px;
+  color: #FFF;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+main #container_dropdownMenu .menu_button .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #container_dropdownMenu .menu_button .container a {
+  text-decoration: none;
+  color: #FFF;
+  padding: 10px 0 10px 10px;
+}
+
+main #container_dropdownMenu .menu_button .container button {
+  border: none;
+  outline: none;
+  background-color: #901C1C;
+  color: #FFF;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  font-size: large;
+}
+
+main #container_dropdownMenu .menu_button .container button i {
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transform: rotateZ(0deg);
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+  -ms-transform: rotateZ(0deg);
+  -o-transform: rotateZ(0deg);
+}
+
+main #container_dropdownMenu .menu_button #menu-dropdown {
+  list-style: none;
+  position: relative;
+  top: -300px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+main #container_dropdownMenu .menu_button #menu-dropdown li {
+  padding: 10px 0 10px 10px;
+}
+
+main #container_dropdownMenu .menu_button #menu-dropdown li a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+main #gallerie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #gallerie #card {
+  padding-bottom: 20px;
+  margin: 0 auto;
+  width: 350px;
+}
+
+main #gallerie #card .infoMedia {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #gallerie #card .infoMedia h3 {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #901C1C;
+}
+
+main #gallerie #card .infoMedia .rightMedia {
+  width: 25%;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #gallerie #card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 350px;
+  height: 350px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: transform 0.5s, box-shadow 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+}
+
+main #gallerie #card img:hover {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+}
+
+main #gallerie #card video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 350px;
+  height: 350px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: transform 0.5s, box-shadow 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+}
+
+main #gallerie #card video:hover {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+}
+
+main #lightbox {
+  overflow: auto;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  animation: lightboxIn 0.5s;
+  -webkit-animation: lightboxIn 0.5s;
+  display: none;
+}
+
+main #lightbox #lightbox__next, main #lightbox #lightbox__previous {
+  background: url(../../../img/arrow.svg) center center/48px 30px no-repeat;
+  position: fixed;
+  top: 0%;
+  right: 0;
+  z-index: 20;
+  text-indent: -3000px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 50px;
+  height: 100%;
+  opacity: 0.5;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+main #lightbox #lightbox__next:hover, main #lightbox #lightbox__previous:hover {
+  opacity: 1;
+}
+
+main #lightbox #lightbox__previous {
+  right: auto;
+  left: 0;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+main #lightbox #lightbox__close {
+  z-index: 30;
+  background: url(../../../img/cross.svg) center center/26px 24px no-repeat;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-indent: -3000px;
+  position: fixed;
+  top: 30px;
+  right: 10px;
+  opacity: .5;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+
+main #lightbox #lightbox__close:hover {
+  opacity: 1;
+}
+
+main #lightbox #lightbox__container {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  animation: lightboxIn 0.5s;
+  -webkit-animation: lightboxIn 0.5s;
+}
+
+main #lightbox #lightbox__container p {
+  margin-left: 20%;
+  width: 90%;
+  text-align: left;
+  color: #901C1C;
+}
+
+main #lightbox #lightbox__container img {
+  max-height: 100%;
+  min-width: 70%;
+  max-width: 100%;
+}
+
+@-webkit-keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+aside {
+  top: 0;
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+aside #container {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 15px;
+  position: relative;
+  background-color: #DB8876;
+  width: 40%;
+  height: 77%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  text-align: left;
+  color: #312E2E;
+}
+
+aside #container #close {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  color: #FFF;
+  font-size: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside #container #close #close-container {
+  background-color: red;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+aside #container #close #close-container #cross-1 {
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  height: 3px;
+  background-color: #FFF;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+aside #container #close #close-container #cross-2 {
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  height: 3px;
+  background-color: #FFF;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+aside #container #close #close-container:focus {
+  border: 2px solid #525252;
+}
+
+aside #container h2 {
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+aside #container .field label {
+  text-align: left;
+}
+
+aside #container .field input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding-left: 10px;
+}
+
+aside #container .field input:focus {
+  border: 1px solid #901C1C;
+}
+
+aside #container .field textarea {
+  padding: 10px 0 5px 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+aside #container .field textarea:focus {
+  border: 1px solid #901C1C;
+}
+
+aside #container button {
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  background-color: #901C1C;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+aside #container button:hover {
+  background-color: #D3573C;
+}
+
+aside #container button:focus {
+  border: 2px solid #525252;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding-left: 15px;
+  }
+  main {
+    width: 95vw;
+  }
+  main header {
+    background-color: #fff;
+    position: relative;
+    height: 185px;
+    padding: 0;
+  }
+  main header #info-header {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin: 0px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  main header #info-header h1 {
+    font-weight: 400px;
+    font-size: 26px;
+    line-height: 25px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  main header #info-header p, main header #info-header em {
+    padding-top: 8px;
+    width: 150%;
+    line-height: 12px;
+    font-size: 16px;
+  }
+  main header #info-header button {
+    position: fixed !important;
+    display: block;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    bottom: 0;
+    top: 80% !important;
+    left: 50% !important;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    transform: translate(-50%, 50%) !important;
+    -webkit-transform: translate(-50%, 50%) !important;
+    -moz-transform: translate(-50%, 50%) !important;
+    -ms-transform: translate(-50%, 50%) !important;
+    -o-transform: translate(-50%, 50%) !important;
+  }
+  main header #info-header nav {
+    position: absolute;
+    bottom: -5px;
+    margin: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  main header #info-header nav a {
+    line-height: 10px;
+    margin: 2px;
+    padding: 0px 2px;
+  }
+  main header #photo-header {
+    position: absolute;
+    right: -7px;
+    top: -5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 130px;
+  }
+  main header #photo-header img {
+    width: 100px;
+    height: 100px;
+  }
+  main #container_dropdownMenu {
+    display: none;
+  }
+  main #gallerie {
+    margin-top: 10px;
+  }
+  main #gallerie #card {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  main #gallerie #card img, main #gallerie #card video {
+    width: 240px !important;
+    height: 240px !important;
+  }
+  main #gallerie #card .infoMedia {
+    width: 100%;
+    height: 30px;
+  }
+  main #gallerie #card .infoMedia h3 {
+    margin-left: 5px;
+    font-size: 14px;
+    width: 130px;
+    vertical-align: middle;
+  }
+  main #gallerie #card .infoMedia .rightMedia {
+    font-size: 14px;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main #gallerie #card .infoMedia .rightMedia p {
+    color: #901C1C;
+    margin-left: 10px;
+  }
+  main .lightbox__container {
+    width: 95%;
+    height: auto;
+  }
+  main .lightbox__container p {
+    margin-left: 20%;
+  }
+  main .lightbox__container img {
+    height: auto !important;
+    width: 70% !important;
+  }
+}
+
+@media (max-width: 350px) {
+  #photo-header {
+    width: 130px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #photo-header img {
+    position: absolute;
+    right: -7px;
+    top: -2px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  aside #container {
+    width: 80%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+/*# sourceMappingURL=photographe.css.map */

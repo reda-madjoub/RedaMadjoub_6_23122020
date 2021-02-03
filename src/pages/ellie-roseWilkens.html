@@ -17,44 +17,39 @@
             <div id="info-header"></div>
             <div id="photo-header"></div>
         </header>
-        <div class="menu_button">
-            <div class="container">
-                <a href="#">Popularité</a>
-                <button id="menubutton"
-                aria-haspopup="true"
-                aria-controls="menu-dropdown">
-                <i class="fas fa-chevron-up"></i>
-                </button>
-            </div>
-            <ul id="menu-dropdown"
-                role="menu"
-                aria-labelledby="menubutton"
-                aria-expanded="false">
-                <hr>
-              <li role="none">
-                <a role="menuitem" href="#">
-                  Date
-                </a>
-              </li>
-              <hr>
-              <li role="none">
-                <a role="menuitem" href="#">
-                 Titre
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div id="container_dropdownMenu">
+            <p>Trier par </p>
+            <div class="menu_button">
+                <div class="container">
+                    <a class="filtreDropDownMenu" href="#">Popularité</a>
+                    <button id="menubutton"
+                    aria-haspopup="true"
+                    aria-controls="menu-dropdown">
+                    <i tabindex="1" class="fas fa-chevron-up"></i>
+                    </button>
+                </div>
+                <ul id="menu-dropdown"
+                    role="menu"
+                    aria-labelledby="menubutton"
+                    aria-expanded="false">
+                    <hr>
+                  <li role="none">
+                    <a class="filtreDropDownMenu" role="menuitem" href="#">
+                      Date
+                    </a>
+                  </li>
+                  <hr>
+                  <li role="none">
+                    <a class="filtreDropDownMenu" role="menuitem" href="#">
+                     Titre
+                    </a>
+                  </li>
+                </ul>
+              </div>
+        </div>
         <section id="gallerie"></section>
 
-          <!-- LIGHTBOX -->
-        <!-- <div class="lightbox">
-            <button class="lightbox__close">fermer</button>
-            <button class="lightbox__next">suivant</button>
-            <button class="lightbox__previous">précédent</button>
-            <div class="lightbox__container">
-                <img src="https://res.cloudinary.com/dps3eww2i/image/upload/c_thumb,w_200,g_face/v1609004920/P6-img/Animals_Rainbow.jpg" alt="animal rainbow">
-            </div>
-        </div> -->
+     
     </main>
 
     <!-- MODAL FORMULAIRE -->

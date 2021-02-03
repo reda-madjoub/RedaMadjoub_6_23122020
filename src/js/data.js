@@ -15,7 +15,7 @@ export const data = {
       "id": 930,
       "city": "Paris",
       "country": "France",
-      "tags": ["sports", "architecture"],
+      "tags": ["sport", "architecture"],
       "tagline": "Capturer des compositions complexes",
       "price": 250,
       "portrait": "EllieRoseWilkens.jpg"
@@ -401,7 +401,7 @@ export const data = {
     {
       "id": 95234343,
       "photographerId": 243,
-      "image": "Animals_Rainbow.jpg.jpg",
+      "image": "Animals_Rainbow.jpg",
       "tags": ["animals"],
       "likes": 59,
       "date": "2019-07-02",
