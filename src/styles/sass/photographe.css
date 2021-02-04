@@ -468,6 +468,10 @@ main #lightbox #lightbox__next:hover, main #lightbox #lightbox__previous:hover {
   opacity: 1;
 }
 
+main #lightbox #lightbox__next:focus, main #lightbox #lightbox__previous:focus {
+  border: 2px solid black;
+}
+
 main #lightbox #lightbox__previous {
   right: auto;
   left: 0;
@@ -502,8 +506,14 @@ main #lightbox #lightbox__close:hover {
   opacity: 1;
 }
 
+main #lightbox #lightbox__close:focus {
+  border: 2px solid black;
+}
+
 main #lightbox #lightbox__container {
-  width: 90%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 90%;
   margin: 0 auto;
   display: -webkit-box;
@@ -523,16 +533,25 @@ main #lightbox #lightbox__container {
   -webkit-animation: lightboxIn 0.5s;
 }
 
-main #lightbox #lightbox__container p {
-  margin-left: 20%;
-  width: 90%;
-  text-align: left;
+main #lightbox #lightbox__container h3 {
+  margin-top: 10px;
+  font-weight: 400;
+  width: 100%;
   color: #901C1C;
 }
 
 main #lightbox #lightbox__container img {
   max-height: 100%;
-  min-width: 70%;
+  min-width: 60%;
+  max-width: 100%;
+  height: auto;
+}
+
+main #lightbox #lightbox__container video {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-width: 60%;
   max-width: 100%;
 }
 
@@ -856,16 +875,29 @@ aside #container button:focus {
     color: #901C1C;
     margin-left: 10px;
   }
-  main .lightbox__container {
-    width: 95%;
-    height: auto;
-  }
-  main .lightbox__container p {
-    margin-left: 20%;
-  }
-  main .lightbox__container img {
-    height: auto !important;
+}
+
+@media (max-width: 550px) {
+  #lightbox__container {
     width: 70% !important;
+    height: 90%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #lightbox__container img {
+    height: auto !important;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 

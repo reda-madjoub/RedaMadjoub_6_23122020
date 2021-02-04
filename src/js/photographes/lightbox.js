@@ -9,49 +9,50 @@ const container = document.getElementById("lightbox__container");
 
 
 
-
-
-
-
-
-
-// const tab = [...section[0].children];
-
-// AFFICHER CHAQUE ELEMENT DANS LA LIGHTBOX AU CLICK
-// tab.forEach(element => {
-//     // console.log(element);
-//     element.addEventListener("click", (e) => {
-//         console.log();
-//         let i = 0
-//         const dom = `
-//         <div id="lightbox" id=${i++}>
-//             <button id="lightbox__close">fermer</button>
-//             <button id="lightbox__next">suivant</button>
-//             <button id="lightbox__previous">précédent</button>
-//             <div id="lightbox__container">
-//                 <img src="${e.target.getAttribute("src")}" alt="animal rainbow">
-//                 <p>Nom de la photo</p>
-//             </div>
-//         </div>`
-//         main.insertAdjacentHTML("beforeend", dom);
-//     })
-// })
-
-
+const trapFocus = (e) => {
+        // TRAP TAB AND SHIFT + TAB INSIDE MODAL
+        if(e.target === closeBtn && e.key === "Tab") {
+            if(e.target === closeBtn &&  e.shiftKey){
+                e.preventDefault()
+                prev.focus()
+            }else {
+                e.preventDefault()
+                next.focus()
+            }
+        }
+        if (e.target === prev && e.key === "Tab") {
+            if(e.target === prev && e.shiftKey){
+                e.preventDefault()
+                next.focus()
+            }else {
+                e.preventDefault()
+                closeBtn.focus()
+            }
+        }
+        
+}
 window.addEventListener("load", (e) => {
     
     // LAUNCH LIGHTBOX
     const test = document.querySelectorAll("#card")
+    const nbCard = test.length
+    let count = 0;
     const lightboxImg = [...test].map(el => el.childNodes)
-    console.log(lightboxImg[6][1]);
     lightboxImg.forEach(el => {
         el.forEach(item => {
             item.addEventListener("click", () => {
+                
+                // SHOW LIGHTBOX
                 lightbox.style.display = "flex";
+                // MAKE CROSS FOCUS
+                closeBtn.focus()
+                window.addEventListener("keydown",trapFocus)
                 let html = "";
-                html = el[1].tagName === "IMG" ? `<img src="${el[1].currentSrc}"/>` : `<video width="450px" height="450px" controls>
+                console.log(el);
+                // SHOW MEDIA INSIDE LIGHTBOX
+                html = el[1].tagName === "IMG" ? `<img src="${el[1].currentSrc}"/> <h3>${el[3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` : `<video width="450px" height="450px" controls>
                                                                                     <source src="${el[1].currentSrc}" type="video/mp4">    
-                                                                                </video>` 
+                                                                                </video> <h3>${el[3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` 
                 container.innerHTML = html
             })
         })
@@ -65,14 +66,19 @@ window.addEventListener("load", (e) => {
 
     // SLIDE LEFT TO RIGHT
     next.addEventListener("click", (e) => {
-        let limit = lightboxImg.length;
-        let html = "";
-        
-        
-    })
-    // SLIDE RIGTH TO LEFT
-    prev.addEventListener("click", (e) => {
-        console.log("prev");
+        count < (nbCard - 1) ? count++ : count = 0;
+        let html = lightboxImg[count][1].tagName === "IMG" ? `<img src="${lightboxImg[count][1].currentSrc}"/><h3>${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` : `<video width="450px" height="450px" controls>
+                                                                                                                        <source src="${lightboxImg[count][1].currentSrc}" type="video/mp4">    
+                                                                                                                    </video><h3>${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` 
+    container.innerHTML = html;
+})
+// SLIDE RIGTH TO LEFT
+prev.addEventListener("click", (e) => {
+    count <= 0 ? count = nbCard - 1 : count--;
+        let html = lightboxImg[count][1].tagName === "IMG" ? `<img src="${lightboxImg[count][1].currentSrc}"/><h3>${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` : `<video width="450px" height="450px" controls>
+                                                                                                                        <source src="${lightboxImg[count][1].currentSrc}" type="video/mp4">    
+                                                                                                                    </video><h3>${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` 
+        container.innerHTML = html 
     })
 })
 

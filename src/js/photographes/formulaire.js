@@ -35,9 +35,8 @@ const validForm = () => {
 // LAUNCH FORM MODAL BY CLICK
 LaunchForm.addEventListener("click", e => {
     if(e.target.nodeName === "BUTTON" ) {
-        form.style.display = "flex"
-        form.setAttribute("aria-hidden", false)
-        form.setAttribute("aria-hidden", true)
+        form.style.display = "flex";
+        form.setAttribute("aria-hidden", true);
         first.focus()
     }
 })
@@ -66,7 +65,7 @@ window.addEventListener("keydown", (e) => {
 
     // CLOSE MODAL WITH ESC 
     if (e.key === 'Escape') {
-        form.setAttribute("aria-modale", false)
+        form.setAttribute("aria-modal", false)
         form.style.display = "none"
     }
 
@@ -86,8 +85,7 @@ window.addEventListener("keydown", (e) => {
 // closeEl FORM MODAL CLICK ON BACKGROUND
 form.addEventListener("click", e => {
     if(e.target === form) {
-        form.setAttribute("aria-modale", false)
-        form.setAttribute("aria-hidden", true)
+        form.setAttribute("aria-modal", false)
         form.style.display = "none"
     }
 }) 
@@ -95,15 +93,13 @@ form.addEventListener("click", e => {
 // closeEl FORM MODAL WITH ENTER WHEN FOCUS ON CROSS
 closeContainer.addEventListener('keypress', (e) => {
     if(e.key === 'Enter' && document.activeElement === closeContainer){
-        form.setAttribute("aria-modale", false)
-        form.setAttribute("aria-hidden", true)
+        form.setAttribute("aria-modal", false)
         form.style.display = "none"
     }
 }, true);
 
 // closeEl FORM MODAL CLICK ON CROSS
 closeEl.addEventListener("click", e => {
-    form.setAttribute("aria-modale", false)
-    form.setAttribute("aria-hidden", true)
+    form.setAttribute("aria-modal", false)
     form.style.display = "none"
 }) 
