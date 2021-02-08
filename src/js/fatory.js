@@ -43,24 +43,24 @@ const createPhotographe = (id) => {
 // CHECK URL AND FILL PAGE WITH PROPER PHOTOGRAPHE
 const getUser = () => {
     let user = {}
-    // console.log(window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " "));
+    console.log(window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " "));
     switch (window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " ")) {
-      case "ELLIEROSEWILKENS".indexOf(ellierosewilkens.name) > -1:
+      case "ellieroseWilkens":
         user = ellierosewilkens
         break;
-      case "TRACYGALINDO":
+      case "tracyGalindo":
         user = tracygalindo
         break;
-      case "RHODEDUBOIS":
+      case "rhodeDubois":
         user = rhodedubois
         break;
-      case "NABEELBRADFORD":
+      case "nabeelBradford":
         user = nabeelbradford
         break;
-      case "MIMIKEEL":
+      case "mimiKeel":
         user = mimikeel
         break;
-      case "MARCELNIKOLIC":
+      case "marcelNikolic":
         user = marcelnikolic
         break;
         default:
