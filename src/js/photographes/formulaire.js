@@ -1,3 +1,5 @@
+import {getUser} from '../fatory.js'
+
 // DOM ELEMENTS
 const LaunchForm = document.querySelector("#info-header")
 const form = document.getElementById("formulaire");
@@ -10,6 +12,10 @@ const closeContainer = document.getElementById("close-container")
 const header =  document.querySelector("header")
 const main =  document.querySelector("main")
 const aside =  document.querySelector("aside")
+const h1 = document.getElementById("titleModal")
+
+h1.innerHTML = ` Contactez moi </br>${getUser().getInfos().name}`
+
 
 // ALL FIELDS NOT EMPTY ?
 const validForm = () => {

@@ -72,7 +72,6 @@ const filterFunction = () => {
     // FILTRAGE LORS DE LA REDIRECTION AVEC UN TAG
     window.addEventListener("load", () => {
         if(localStorage.length > 0) filterByTags(localStorage.getItem("tag"))
-        console.log(tab);
         tagNavigation.forEach(item => { // item => tag de la nav selection
             if(tab.includes(item.innerText.substring(1).toLowerCase())) {
                 item.classList.add("selected")

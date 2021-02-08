@@ -7,7 +7,6 @@ const portrait = document.getElementById("photo-header")
 
 // AFFICHER LES TAGS
 const createTags = (user) => {
-  console.log(photographer().getInfos());
   let affichageTags = ""
   for(let i = 0; i < user.getInfos().tags.length; i++) {
       affichageTags += `

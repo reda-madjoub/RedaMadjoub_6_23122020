@@ -18,6 +18,7 @@ const createPhotographe = (id) => {
                         tags : datas[0][i].tags,
                         id: datas[0][i].id,
                         price: datas[0][i].price,
+                        alt: datas[0][i].alt,
                 }
             } 
         }
@@ -43,7 +44,6 @@ const createPhotographe = (id) => {
 // CHECK URL AND FILL PAGE WITH PROPER PHOTOGRAPHE
 const getUser = () => {
     let user = {}
-    console.log(window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " "));
     switch (window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " ")) {
       case "ellieroseWilkens":
         user = ellierosewilkens
@@ -68,8 +68,7 @@ const getUser = () => {
         break;
     }
     return user
-  }
-
+  };
 
 // OBJECTS INSTANTIATION
 const tracygalindo = createPhotographe(82)
