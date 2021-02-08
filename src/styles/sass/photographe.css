@@ -573,7 +573,33 @@ main #lightbox #lightbox__container video {
   }
 }
 
-aside {
+#rectangle {
+  position: fixed;
+  right: 40px;
+  bottom: 0;
+  width: 35%;
+  height: 70px;
+  background-color: #DB8876;
+  font-weight: 500;
+  color: #000;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+#formulaire {
   top: 0;
   position: fixed;
   z-index: 10;
@@ -592,7 +618,7 @@ aside {
   display: none;
 }
 
-aside #container {
+#formulaire #container {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -614,7 +640,7 @@ aside #container {
   color: #312E2E;
 }
 
-aside #container #close {
+#formulaire #container #close {
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -637,14 +663,14 @@ aside #container #close {
           align-items: center;
 }
 
-aside #container #close #close-container {
+#formulaire #container #close #close-container {
   background-color: red;
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-aside #container #close #close-container #cross-1 {
+#formulaire #container #close #close-container #cross-1 {
   position: absolute;
   top: 8px;
   width: 100%;
@@ -657,7 +683,7 @@ aside #container #close #close-container #cross-1 {
   -o-transform: rotate(45deg);
 }
 
-aside #container #close #close-container #cross-2 {
+#formulaire #container #close #close-container #cross-2 {
   position: absolute;
   top: 8px;
   width: 100%;
@@ -670,22 +696,22 @@ aside #container #close #close-container #cross-2 {
   -o-transform: rotate(-45deg);
 }
 
-aside #container #close #close-container:focus {
+#formulaire #container #close #close-container:focus {
   border: 2px solid #525252;
 }
 
-aside #container h2 {
+#formulaire #container h2 {
   font-weight: 500;
   color: #000000;
   margin-bottom: 10px;
   font-size: 32px;
 }
 
-aside #container .field label {
+#formulaire #container .field label {
   text-align: left;
 }
 
-aside #container .field input {
+#formulaire #container .field input {
   outline: none;
   border: none;
   width: 100%;
@@ -698,11 +724,11 @@ aside #container .field input {
   padding-left: 10px;
 }
 
-aside #container .field input:focus {
+#formulaire #container .field input:focus {
   border: 1px solid #901C1C;
 }
 
-aside #container .field textarea {
+#formulaire #container .field textarea {
   padding: 10px 0 5px 10px;
   outline: none;
   border: none;
@@ -715,11 +741,11 @@ aside #container .field textarea {
   -o-border-radius: 5px;
 }
 
-aside #container .field textarea:focus {
+#formulaire #container .field textarea:focus {
   border: 1px solid #901C1C;
 }
 
-aside #container button {
+#formulaire #container button {
   cursor: pointer;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -739,11 +765,11 @@ aside #container button {
   -o-border-radius: 5px;
 }
 
-aside #container button:hover {
+#formulaire #container button:hover {
   background-color: #D3573C;
 }
 
-aside #container button:focus {
+#formulaire #container button:focus {
   border: 2px solid #525252;
 }
 

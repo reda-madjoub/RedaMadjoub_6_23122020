@@ -11,6 +11,7 @@ const portrait = document.getElementById("photo-header")
 
 // AFFICHER LES TAGS
 const createTags = (user) => {
+  console.log(photographer().getInfos());
   let affichageTags = ""
   for(let i = 0; i < user.getInfos().tags.length; i++) {
       affichageTags += `
@@ -24,7 +25,7 @@ const createTags = (user) => {
 
 const showPortrait = (user) => {
   portrait.innerHTML = `
-  <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_350,h_350/P6-img/${user.getInfos().name.split(" ").join("").split("-").join("")}" alt="${user.getInfos().name}">
+  <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_350,h_350/P6-img/${user.getInfos().portrait}" alt="${user.getInfos().name}">
   `
 }
 

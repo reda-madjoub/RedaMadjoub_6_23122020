@@ -11,7 +11,7 @@ export const data = {
       "portrait": "MimiKeel.jpg"
     },
     {
-      "name": "Ellie-Rose Wilkens",
+      "name": "ellie-rose Wilkens",
       "id": 930,
       "city": "Paris",
       "country": "France",
@@ -69,7 +69,7 @@ export const data = {
       "tags": ["fashion"],
       "likes": 62,
       "date": "2011-12-08",
-      "price": 55
+      "price": 55,
     },
     {
       "id": 8520927,

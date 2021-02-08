@@ -17,6 +17,7 @@ const createPhotographe = (id) => {
                         portrait: datas[0][i].portrait,
                         tags : datas[0][i].tags,
                         id: datas[0][i].id,
+                        price: datas[0][i].price,
                 }
             } 
         }
@@ -42,8 +43,9 @@ const createPhotographe = (id) => {
 // CHECK URL AND FILL PAGE WITH PROPER PHOTOGRAPHE
 const getUser = () => {
     let user = {}
+    console.log(window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " "));
     switch (window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " ")) {
-      case "ellie rosewilkens":
+      case "ellierosewilkens":
         user = ellierosewilkens
         break;
       case "tracygalindo":
@@ -68,6 +70,7 @@ const getUser = () => {
     return user
   }
 
+
 // OBJECTS INSTANTIATION
 const tracygalindo = createPhotographe(82)
 const mimikeel = createPhotographe(243)
@@ -76,8 +79,11 @@ const rhodedubois = createPhotographe(925)
 const marcelnikolic = createPhotographe(195)
 const ellierosewilkens = createPhotographe(930)
 
+console.log(ellierosewilkens.getInfos());
+console.log(mimikeel.getInfos());
+
+
 // console.log(mimikeel.getMedias());
-// console.log(mimikeel.getInfos());
 
 export {
     getUser,

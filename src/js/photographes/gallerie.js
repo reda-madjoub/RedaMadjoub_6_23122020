@@ -41,14 +41,12 @@ const filterByLikes = (user) => {
 // DISPLAY GALLERY
 const showGallery = (user) => {
 
-    const html = user.map(element => {
-
-
+    const html = user.map(element => {  
         if(element.hasOwnProperty("video")) {
                 // POSTER ATTRIBUTE ADD THUMBNAIL WHICH DESEPPEAR WHEN VIDEO START
                 return `
                 <div id="card" tabindex="1">
-                    <video tabindex="-1" width="450px" height="450px" poster="https://res.cloudinary.com/dps3eww2i/image/upload/w_450,h_450/P6-img/${user[5].image.split('.').slice(0, -1).join('.')}" controls>
+                    <video tabindex="-1" width="450px" height="450px" poster="https://res.cloudinary.com/dps3eww2i/image/upload/w_450,h_450/P6-img/${user[5].image}" controls>
                             <source src="https://res.cloudinary.com/dps3eww2i/video/upload/w_450,h_450/P6-img/${element["video"]}" type="video/mp4">
                     </video>
                     <div class="infoMedia">
@@ -67,7 +65,7 @@ const showGallery = (user) => {
         }else {
             return `
             <div id="card" tabindex="1">
-                <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_450,h_450/P6-img/${element["image"].split('.').slice(0, -1).join('.')}">
+                <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_450,h_450/P6-img/${element["image"]}">
                 <div class="infoMedia">
                 <h3>${element["image"].split('_').join(' ').split('.jpg').join(' ')}</h3>
                 <div class="rightMedia">
@@ -109,6 +107,7 @@ window.addEventListener("load", () => {
     // LIKE BUTTON INCREMENT
     [...likeButton].forEach(el => {
         el.addEventListener("click", (e) => {
+            e.stopPropagation()
             let count = parseInt(el.previousElementSibling.textContent);
             count++;
             let res = count.toString()
@@ -116,5 +115,4 @@ window.addEventListener("load", () => {
         })
     })    
 })
-
 showGallery(getUser().getMedias())
