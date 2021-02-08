@@ -5,10 +5,6 @@ const header = document.getElementById("info-header")
 const portrait = document.getElementById("photo-header")
 
 
-
-
-
-
 // AFFICHER LES TAGS
 const createTags = (user) => {
   console.log(photographer().getInfos());

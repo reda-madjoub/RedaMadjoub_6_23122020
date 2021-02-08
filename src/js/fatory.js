@@ -45,7 +45,7 @@ const getUser = () => {
     let user = {}
     // console.log(window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " "));
     switch (window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " ")) {
-      case "ELLIEROSEWILKENS":
+      case "ELLIEROSEWILKENS".indexOf(ellierosewilkens.name) > -1:
         user = ellierosewilkens
         break;
       case "TRACYGALINDO":
