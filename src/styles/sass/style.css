@@ -187,7 +187,7 @@ main section .cards {
 main section .cards .card {
   padding: 20px 0px;
   line-height: 20px;
-  width: 350px;
+  width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
