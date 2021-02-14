@@ -40,7 +40,7 @@ const createHeader = (user) => {
     tag.forEach(el => el.addEventListener("click", (e) =>{
       localStorage.setItem("tag", e.target.innerText.split("#").join("")) 
       // REDIRECTION TO INDEX.html
-      window.location.replace("../../../index.html");
+      window.location.replace("./index.html");
     }))
 }
 
