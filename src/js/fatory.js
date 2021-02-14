@@ -45,7 +45,7 @@ const createPhotographe = (id) => {
 const getUser = () => {
     let user = {}
     switch (window.location.href.split("/").pop().split(".").slice(0, -1).join(".").replace("-", " ")) {
-      case "ellierosewilkens":
+      case "ellieroseWilkens":
         user = ellierosewilkens
         break;
       case "tracyGalindo":

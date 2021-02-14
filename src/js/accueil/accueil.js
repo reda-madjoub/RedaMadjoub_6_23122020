@@ -15,7 +15,7 @@ const resultat = [...data.photographers].map(item => {
     return item
 })
 for(let i = 0; i < resultat.length; i++) {
-    // console.log(resultat[i].name.charAt(0).toLowerCase() + resultat[i].name.slice(1).replace(/[^0-9a-z]/gi, ''));
+    console.log(resultat[i].name.charAt(0).toLowerCase() + resultat[i].name.slice(1).replace(/[^0-9a-z]/gi, ''));
     result += `
     <div class="card" id="${resultat[i].id}">
         <a href="./src/pages/${resultat[i].name.charAt(0).toLowerCase() + resultat[i].name.slice(1).replace(/[^0-9a-z]/gi, '')}.html">
