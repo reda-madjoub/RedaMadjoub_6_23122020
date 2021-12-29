@@ -57,6 +57,21 @@ window.addEventListener("load", (e) => {
                                                                                 </video> <h3>${el[3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` 
                 container.innerHTML = html
             })
+            // LAUNCH LIGHTBOX WHEN FOCUS IS ON MEDIA AND USER TAP "ENTER"
+            el[1].parentElement.addEventListener("keydown", (e) => {
+                console.log(e.code);
+                if (e.code === "Enter") {
+                    lightbox.style.display = "flex";
+                    let html = "";
+                // SHOW MEDIA INSIDE LIGHTBOX
+                console.log(el);
+                html = el[1].tagName === "IMG" ? `<img src="${el[1].currentSrc}" alt="${el[3].innerText.replace(/[^a-z]/gi, ' ')}"/> <h3>${el[3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` : `<video width="450px" height="450px" controls="true" alt="${el[3].innerText.replace(/[^a-z]/gi, ' ')}" alt="${el[3].innerText.replace(/[^a-z]/gi, ' ')}" autoplay>
+                                                                                    <source src="${el[1].currentSrc}" type="video/mp4">    
+                                                                                </video> <h3>${el[3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` 
+                container.innerHTML = html
+                }
+            })
+
         
     })
     
@@ -67,7 +82,7 @@ window.addEventListener("load", (e) => {
     })
 
 
-    // SLIDE LEFT TO RIGHT
+    // SLIDE LEFT TO RIGHT WITH KEYBOARD
     window.addEventListener("keydown", (e) => {
         if(e.key === "ArrowRight") {
         count < (nbCard - 1) ? count++ : count = 0;
@@ -93,7 +108,7 @@ window.addEventListener("load", (e) => {
                                                                                                                     </video><h3>${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` 
     container.innerHTML = html;
     })
-    // SLIDE RIGTH TO LEFT
+    // SLIDE RIGTH TO LEFT WITH CLICK
     prev.addEventListener("click", (e) => {
         count <= 0 ? count = nbCard - 1 : count--;
             let html = lightboxImg[count][1].tagName === "IMG" ? `<img src="${lightboxImg[count][1].currentSrc}" alt="${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}"/><h3>${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}</h3>` : `<video width="450px" height="450px" alt="${lightboxImg[count][3].innerText.replace(/[^a-z]/gi, ' ')}" controls>

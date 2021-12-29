@@ -93,36 +93,3 @@ export {
     ellierosewilkens,
     marcelnikolic,
 }
-
-
-
-
-
-
-
-
-
-// CLASS FACTORY FUNCTIONS
-
-// console.log(Object.values(data));
-// console.log(data["photographers"].forEach(name => console.log(name)));
-// FACTORY PHOTOGRAPHES
-// class photographesFactory {
-//     createPhotographe(data) {
-//         this.name = data.photographes.name
-//         return new Photo(data.name)
-//     }
-// }
-// console.log(typeof PhotoFactory);
-// class Photo {
-//     constructor(name, imageURL, alt, dscription) {
-//         this.name = name
-//         // ...
-//     }
-// }
-// const Photo1 = photographesFactory.createPhotographe(data[name])
-// const Photo2 = PhotoFactory.createPhoto({name: '', imageUrl: ''})
-// const Photo3 = PhotoFactory.createPhoto(data)
-// const Photo4 = PhotoFactory.createPhoto(data)
-
-
