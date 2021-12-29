@@ -132,6 +132,7 @@ window.addEventListener("load", () => {
                 showGallery(filterByName(getUser()))
             }
         })
+    
     });
 
 
