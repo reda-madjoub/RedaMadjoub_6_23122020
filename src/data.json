@@ -1,4 +1,4 @@
-export const data = {
+{
     "photographers": [
       {
         "name": "Mimi Keel",
@@ -70,7 +70,7 @@ export const data = {
         "tags": ["fashion"],
         "likes": 62,
         "date": "2011-12-08",
-        "price": 55,
+        "price": 55
       },
       {
         "id": 8520927,
@@ -658,5 +658,5 @@ export const data = {
         "price": 80
       }
     ]
-  }
+}
   
