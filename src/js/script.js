@@ -1,6 +1,6 @@
+import './data'
 import './fatory'
 import './filter'
-import './data'
 import './accueil/photographersCards'
 import './accueil/scrollButton'
 import './photographes/dropdownMenu'

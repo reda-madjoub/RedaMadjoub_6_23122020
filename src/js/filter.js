@@ -1,4 +1,4 @@
-import { data } from '../js/data.js'
+import { DATA } from './../API/API.js'
 // DOM ELEMENTS
 const tagNavigation = document.querySelectorAll("nav a")
 const card = document.getElementsByClassName("card")
@@ -6,67 +6,68 @@ const cards = document.getElementsByClassName("cards")
 const tagPhoto = document.getElementsByClassName("tags")
 
 
+// CHECK WHICH TAG ARE SELECTED AND PUTTING THEM INTO ARRAY
+const isTagSelected = (array, selectedTag) => {
+    if(array.length < 1) {
+        array.push(selectedTag)
+    }else {
+        if(array.includes(selectedTag)) {
+            for (let i = 0; i < array.length; i++) {
+                if(array[i] === selectedTag) {
+                    array.splice(i,1)
+                }
+            }
+        }else {
+            
+            array.push(selectedTag)
+        }
+    }
+}
+// GET PHOTOGRPAHERS ID WHEN HAVE THE SAME TAGS SELECTED IN TAGARRAY
+const getPhotographerIdBySelectedTag = (data, TagArray, IdArray) => {
+data.photographers.map(el => {
+    el.tags.filter(elem => {
 
-
-
+        if(TagArray.includes(elem) === true) {
+            if(!(IdArray.includes(el.id))){
+                return IdArray.push(el.id)
+            }
+        }else {
+            return -1
+        }
+    })
+})
+}
+// DISPLAY PHOTOGRAPHERS WHEN ID IS IN IDARRAY
+const showPhotographersByIds = (IdArray, domElt) => {
+    if(IdArray.length !== 0) {
+        for (let i = 0; i < domElt.length; i++) {
+            if(IdArray.includes(parseInt(domElt[i].getAttribute('id')))) {
+                domElt[i].style.display = "flex"
+            }else {
+                domElt[i].style.display = "none"
+            }
+        }
+    }else {
+        for (let i = 0; i < domElt.length; i++) {
+            domElt[i].style.display = "flex"
+        }
+    }
+}
 
 const filterFunction = () => {
-
     const tab = []
-    // ADD LOCALSTORAGE TAG TO TAB ARRAY
-    // if(localStorage.length > 0) {
-    //     tab.push(localStorage.getItem("tag"))
-    // }
-
     // RECHERCHE PAR TAG
     const filterByTags = (tag) => {
-    // CHECK WHICH TAG ARE SELECTED AND PUTTING THEM INTO "tab" ARRAY
-        if(tab.length < 1) {
-            tab.push(tag)
-        }else {
-            if(tab.includes(tag)) {
-                for (let i = 0; i < tab.length; i++) {
-                    if(tab[i] === tag) {
-                        tab.splice(i,1)
-                    }
-                }
-            }else {
-                
-                tab.push(tag)
-            }
-        }
-    
-        // GET PHOTOGRPAHERS ID WHICH HAVE THE SAME TAGS AS SELECTED TAGS IN "tab" ARRAY
-        let res = []
-        data.photographers.map(el => {
-            el.tags.filter(elem => {
-
-                if(tab.includes(elem) === true) {
-                    if(!(res.includes(el.id))){
-                        return res.push(el.id)
-                    }
-                }else {
-                    return -1
-                }
+        // CHECK WHICH TAG ARE SELECTED AND PUTTING THEM INTO "tab" ARRAY
+        isTagSelected(tab, tag)
+        DATA()
+            .then(req => {
+                // ID'S PHOTOGRAPHERS MATCHING SELECTED TAG
+                let res = []
+                getPhotographerIdBySelectedTag(req, tab, res)               
+                showPhotographersByIds(res, card)
             })
-        }) 
-        
-        // DISPLAY PHOTOGRAPHERS WHICH ID IS IN "res" ARRAY
-        if(res.length !== 0) {
-            for (let i = 0; i < card.length; i++) {
-                if(res.includes(parseInt(card[i].getAttribute('id')))) {
-                    card[i].style.display = "flex"
-                }else {
-                    card[i].style.display = "none"
-                }
-            }
-        }else {
-            for (let i = 0; i < card.length; i++) {
-                card[i].style.display = "flex"
-            }
-        }
-        // console.log(tag);
-        // console.log(tab);
     }
     
     // FILTRAGE LORS DE LA REDIRECTION AVEC UN TAG
