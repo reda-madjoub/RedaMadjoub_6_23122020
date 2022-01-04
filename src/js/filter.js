@@ -5,7 +5,6 @@ const card = document.getElementsByClassName("card")
 const cards = document.getElementsByClassName("cards")
 const tagPhoto = document.getElementsByClassName("tags")
 
-
 // CHECK WHICH TAG ARE SELECTED AND PUTTING THEM INTO ARRAY
 const isTagSelected = (array, selectedTag) => {
     if(array.length < 1) {
@@ -17,8 +16,7 @@ const isTagSelected = (array, selectedTag) => {
                     array.splice(i,1)
                 }
             }
-        }else {
-            
+        }else {    
             array.push(selectedTag)
         }
     }

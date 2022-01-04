@@ -1,3 +1,4 @@
+import { DATA } from '../../API/API.js';
 // DOM ELEMENTS
 const img = document.getElementsByTagName("img");
 const video = document.getElementsByTagName("video");

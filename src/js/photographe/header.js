@@ -1,4 +1,4 @@
-import {getUser as photographer} from '../../js/fatory.js'
+import { DATA } from '../../API/API.js';
 
 // DOM ELEMENT
 const header = document.getElementById("info-header")
@@ -8,10 +8,11 @@ const portrait = document.getElementById("photo-header")
 // AFFICHER LES TAGS
 const createTags = (user) => {
   let affichageTags = ""
-  for(let i = 0; i < user.getInfos().tags.length; i++) {
+  const tags = user[0].tags.map(el => el)
+  for(let i = 0; i < tags.length; i++) {
       affichageTags += `
             <a class="tag-link" aria-label="tag animals" href="#">
-            <span class="tag">#${user.getInfos().tags[i]}</span>
+            <span class="tag">#${tags[i]}</span>
             </a>
         `
     }
@@ -20,17 +21,17 @@ const createTags = (user) => {
 
 const showPortrait = (user) => {
   portrait.innerHTML = `
-  <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_350,h_350/P6-img/${user.getInfos().portrait}" alt="${user.getInfos().name}">
+  <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_350,h_350/P6-img/${user[0].portrait}" alt="${user[0].name}">
   `
 }
 
 const createHeader = (user) => {
   header.innerHTML = `
-    <h1>${user.getInfos().name}</h1>
-    <p>${user.getInfos().city}, ${user.getInfos().country}</p>
-    <p><em>${user.getInfos().tagline}</em></p>
+    <h1>${user[0].name}</h1>
+    <p>${user[0].city}, ${user[0].country}</p>
+    <p><em>${user[0].tagline}</em></p>
     <nav id="nav "aria-label="photographer categories" role="navigation">
-    ${tags}
+    ${user[0].tags.map(el => el)}
     </nav>
     <button>Contacter-moi</button>
     `
@@ -44,6 +45,16 @@ const createHeader = (user) => {
     }))
 }
 
-const tags = createTags(photographer())
-showPortrait(photographer())
-createHeader(photographer())
+// const tags = createTags(photographer())
+// showPortrait(photographer())
+// createHeader(photographer())
+
+DATA()
+  .then(data => {
+    let params = new URLSearchParams(window.location.search)
+    const id = parseInt(params.get('id'))
+    const photographer = data.photographers.filter(el => el.id === id)
+    createTags(photographer)
+    showPortrait(photographer)
+    createHeader(photographer)
+  })

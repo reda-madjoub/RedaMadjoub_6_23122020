@@ -9,9 +9,13 @@ const tags = document.getElementsByClassName("tags")
 
 // CREATE HTML CARD FOR PHOTOGRAPHERS
 const cardPhotographeHTML = (photographer) => {
+    // var url = new URL(window.location)
+    // let params = new URLSearchParams()
+    // params.append('id', photographer.id)
+    // url.searchParams.append('id', photographer.id);
     return `
         <div class="card" id="${photographer.id}">
-            <a href="./src/pages/${photographer.name.charAt(0).toLowerCase() + photographer.name.slice(1).replace(/[^0-9a-z]/gi, '')}.html">
+            <a href="./../../../photographe.html?id=${photographer.id}">
                 <img src="https://res.cloudinary.com/dps3eww2i/image/upload/w_550,h_550/P6-img/${photographer.portrait}" alt="${photographer.name}">
                 <h2>${photographer.name}</h2>
             </a>

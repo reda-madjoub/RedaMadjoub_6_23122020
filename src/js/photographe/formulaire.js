@@ -1,4 +1,4 @@
-import {getUser} from '../fatory.js'
+import { DATA } from '../../API/API.js';
 
 // DOM ELEMENTS
 const LaunchForm = document.querySelector("#info-header")
@@ -14,8 +14,13 @@ const main =  document.querySelector("main")
 const aside =  document.querySelector("aside")
 const h1 = document.getElementById("titleModal")
 
-h1.innerHTML = ` Contactez moi </br>${getUser().getInfos().name}`
-
+DATA()
+  .then(data => {
+    let params = new URLSearchParams(window.location.search)
+    const id = parseInt(params.get('id'))
+    const photographer = data.photographers.filter(el => el.id === id)
+    h1.innerHTML = ` Contactez moi </br>${photographer[0].name}`
+})
 
 // ALL FIELDS NOT EMPTY ?
 const validForm = () => {

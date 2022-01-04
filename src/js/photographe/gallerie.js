@@ -1,4 +1,4 @@
-import {getUser} from '../fatory.js'
+import { DATA } from '../../API/API.js';
 
 // DOM ELEMENTS
 const gallerie = document.getElementById("gallerie");
@@ -62,10 +62,10 @@ class Image {
     }
 }
 class Video {
-    createMedia(user, element) {
-        return `
+    createMedia(element) {
+        return `                                                          
         <div id="card" tabindex="0">
-            <video tabindex="0" width="450px" height="450px" poster="https://res.cloudinary.com/dps3eww2i/image/upload/w_450,h_450/P6-img/${user[5].image}" alt="${element["alt"]}" controls>
+            <video tabindex="0" width="450px" height="450px" poster="https://res.cloudinary.com/dps3eww2i/image/upload/w_450,h_450/P6-img/${element.video}" alt="${element["alt"]}" controls>
                     <source src="https://res.cloudinary.com/dps3eww2i/video/upload/w_450,h_450/P6-img/${element["video"]}" type="video/mp4">
             </video>
             <div class="infoMedia">
@@ -100,20 +100,26 @@ const factory = (type) => {
     }
 }
 // DISPLAY GALLERY
-const showGallery = (user) => {
-
-    const html = user.map(element => {
-        if(element.hasOwnProperty("video")) {
-                // POSTER ATTRIBUTE ADD THUMBNAIL WHICH DESEPPEAR WHEN VIDEO START
-                const video = factory(Video)
-                return video.createMedia(user, element)
-        }else {
-            const image = factory(Image)
-            return image.createMedia(element)
-        }
-            
-    });
-    gallerie.innerHTML = html
+const showGallery = () => {
+    DATA()
+        .then(data => { 
+            let params = new URLSearchParams(window.location.search)
+            const id = parseInt(params.get('id'))
+            let html = []
+            data.media.map(el => {
+                if(el.photographerId === id){
+                    if(el.hasOwnProperty("video")) {
+                        // POSTER ATTRIBUTE ADD THUMBNAIL WHICH DESEAPPEAR WHEN VIDEO START
+                        const video = factory(Video)
+                        html.push(video.createMedia(el))
+                    }else {
+                        const image = factory(Image)
+                        html.push(image.createMedia(el))
+                    }
+                }
+            })
+            gallerie.innerHTML = html.map(el => el)
+        })
 }
 
 
@@ -145,6 +151,7 @@ window.addEventListener("load", () => {
             let res = count.toString()
             el.previousElementSibling.innerHTML = `${res}`;
         })
+        // LIKE BUTTON INCREMENT ENTER KEYBOARD
         el.addEventListener("keypress", (e) => {
             if(e.key === "Enter") {
                 e.stopPropagation()
@@ -156,7 +163,7 @@ window.addEventListener("load", () => {
         })
     })    
     
-    // LIKE BUTTON INCREMENT ENTER KEYBOARD
- 
 })
-showGallery(getUser().getMedias())
+
+
+showGallery()
