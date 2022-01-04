@@ -60,7 +60,6 @@ window.addEventListener("load", (e) => {
             })
             // LAUNCH LIGHTBOX WHEN FOCUS IS ON MEDIA AND USER TAP "ENTER"
             el[1].parentElement.addEventListener("keydown", (e) => {
-                console.log(e.code);
                 if (e.code === "Enter") {
                     lightbox.style.display = "flex";
                     let html = "";

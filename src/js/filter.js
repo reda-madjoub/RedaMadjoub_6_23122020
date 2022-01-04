@@ -74,7 +74,6 @@ const filterFunction = () => {
         tagNavigation.forEach(item => { // item => tag de la nav selection
             if(tab.includes(item.innerText.substring(1).toLowerCase())) {
                 item.classList.add("selected")
-                console.log(item)
             }
         })
         

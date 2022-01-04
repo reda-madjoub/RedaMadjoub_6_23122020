@@ -14,6 +14,9 @@ $secondary-dark-bg: #FAFAFA;
 html{
     scroll-behavior: smooth;
 }
+img {
+    object-fit: cover;
+}
 // HEADER
 header {
     position: relative;

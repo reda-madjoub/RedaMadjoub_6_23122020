@@ -26,12 +26,13 @@ const showPortrait = (user) => {
 }
 
 const createHeader = (user) => {
+  const photographerTags = createTags(user)
   header.innerHTML = `
     <h1>${user[0].name}</h1>
     <p>${user[0].city}, ${user[0].country}</p>
     <p><em>${user[0].tagline}</em></p>
     <nav id="nav "aria-label="photographer categories" role="navigation">
-    ${user[0].tags.map(el => el)}
+    ${photographerTags}
     </nav>
     <button>Contacter-moi</button>
     `

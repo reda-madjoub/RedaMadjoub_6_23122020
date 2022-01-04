@@ -25,6 +25,7 @@ header {
     a {
         img {
             width: 200px;
+            object-fit: cover;
         }
     }
 }
@@ -133,6 +134,7 @@ main {
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
+                object-fit: cover;
                 -webkit-border-radius: 50%;
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
@@ -263,6 +265,7 @@ main {
             width: 350px;
             height: 350px;
             margin: 5px;
+            object-fit: cover;
             cursor: pointer;
             border-radius: 5px;
             -webkit-border-radius: 5px;
