@@ -59,9 +59,12 @@ class Image {
 }
 class Video {
     createMedia(element) {
+        let url = `https://res.cloudinary.com/dps3eww2i/video/upload/w_450,h_450/P6-img/${element.video}`
+        // CHANGE EXTENSION INTO PNG
+        const poster = url.replace(/\.[^.]+$/, '.png')
         return `                                                          
         <div id="card" tabindex="0">
-            <video tabindex="0" width="450px" height="450px" poster="https://res.cloudinary.com/dps3eww2i/image/upload/w_450,h_450/P6-img/${element.video}" alt="${element["alt"]}" controls>
+            <video tabindex="0" width="450px" height="450px" poster=${poster} alt="${element["alt"]}" controls>
                     <source src="https://res.cloudinary.com/dps3eww2i/video/upload/w_450,h_450/P6-img/${element["video"]}" type="video/mp4">
             </video>
             <div class="infoMedia">
