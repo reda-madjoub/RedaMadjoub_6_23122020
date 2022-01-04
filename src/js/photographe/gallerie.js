@@ -7,8 +7,8 @@ const likeButton = document.getElementsByClassName("like-btn");
 
 
 // FILTER BY NAME
-const filterByName = (user) => {
-    const sortArray = Array.from(user.getMedias());
+const filterByName = (media) => {
+    const sortArray = Array.from(media);
     sortArray.sort((a, b) => {
         if(a.image) {
             return a > b ? 1 : -1;
@@ -16,26 +16,22 @@ const filterByName = (user) => {
             return a > b ? 1 : -1;
         }
     })
-    // console.log(sortArray);
-    console.log(user.getMedias());
     return sortArray;
 }
 // FILTER BY DATE
-const filterByDate = (user) => {
-    const sortArray = Array.from(user.getMedias());
+const filterByDate = (media) => {
+    const sortArray = Array.from(media);
     sortArray.sort((a, b) => {
         return a.date > b.date ? 1 : -1;
     })
-    console.log(sortArray);
     return sortArray;
 }
 // FILTER BY LIKES
-const filterByLikes = (user) => {
-    const sortArray = Array.from(user.getMedias());
+const filterByLikes = (media) => {
+    const sortArray = Array.from(media);
     sortArray.sort((a, b) => {
-        return a.likes > b.likes ? 1 : -1;
+        return a.likes > b.likes ? -1 : 1;
     })
-    console.log(sortArray);
     return sortArray;
 }
 
@@ -100,9 +96,10 @@ const factory = (type) => {
     }
 }
 // DISPLAY GALLERY
-const showGallery = () => {
+const showGallery = (array = []) => {
     DATA()
-        .then(data => { 
+    .then(data => { 
+            gallerie.innerHTML = ''
             let params = new URLSearchParams(window.location.search)
             const id = parseInt(params.get('id'))
             let html = []
@@ -118,6 +115,24 @@ const showGallery = () => {
                     }
                 }
             })
+            // WHEN USE FILTER 
+            if(array.length !== 0) {
+                let allMedia = [...array]
+                html.length = 0
+
+                allMedia.map(el => {
+                    if(el.hasOwnProperty("video")) {
+                        // POSTER ATTRIBUTE ADD THUMBNAIL WHICH DESEAPPEAR WHEN VIDEO START
+                        const video = factory(Video)
+                        html.push(video.createMedia(el))
+                    }else {
+                        const image = factory(Image)
+                        html.push(image.createMedia(el))
+                    }
+
+                })
+            }
+            
             gallerie.innerHTML = html.map(el => el)
         })
 }
@@ -128,16 +143,22 @@ const showGallery = () => {
 window.addEventListener("load", () => {
     // DROPDOWNMENU FILTER
     [...filtreDropDownMenu].forEach(el => {
-        let html = "";
-        el.addEventListener("click", (e) => {
-            if(e.target === filtreDropDownMenu[0]){
-                showGallery(filterByLikes(getUser()))
-            }else if (e.target === filtreDropDownMenu[1]) {
-                showGallery(filterByDate(getUser()))
-            }else if (e.target === filtreDropDownMenu[2]) {
-                showGallery(filterByName(getUser()))
-            }
-        })
+        DATA()
+            .then(data => {
+                let params = new URLSearchParams(window.location.search)
+                const id = parseInt(params.get('id'))
+                const photographer = data.photographers.filter(el => el.id === id)
+                const media = data.media.filter(el => el.photographerId === id)
+                el.addEventListener("click", (e) => {
+                    if(e.target === filtreDropDownMenu[0]){
+                        showGallery(filterByLikes(media))
+                    }else if (e.target === filtreDropDownMenu[1]) {
+                        showGallery(filterByDate(media))
+                    }else if (e.target === filtreDropDownMenu[2]) {
+                        showGallery(filterByName(media))
+                    }
+                })
+            })
     
     });
 
